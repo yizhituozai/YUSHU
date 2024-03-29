@@ -1,0 +1,12 @@
+#数据：训练数据（监督数据），测试数据
+#4.2损失函数：均方误差，交叉熵误差
+#4.2.1均方误差
+defmean_squared_errror(y,t):
+  return 0.5*np.sum((y-t)**2)
+#4.2.2交叉熵误差
+def cross_entropy_error(y,t):
+  delta=1e-7
+  return -np.sum(t*np.log(y+delta))
+#加上微小值delta，可避免出现np.log(0)变为负无限大而导致的计算出错
+
+#4.2.3minibatch学习
